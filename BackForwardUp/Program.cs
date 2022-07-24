@@ -2,11 +2,17 @@
 
 namespace BackForwardUp
 {
+    using CommandLine;
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var parameters = Parser.Default
+                .ParseArguments<CommandLineOptions>(args).Value;
+
+            Console.WriteLine(parameters.Alpha);
+            Console.WriteLine(parameters.Beta);
         }
     }
 }
