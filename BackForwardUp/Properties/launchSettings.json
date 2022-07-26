@@ -2,7 +2,7 @@
   "profiles": {
     "BackForwardUp": {
       "commandName": "Project",
-      "commandLineArgs": "-a Hello -b World"
+      "commandLineArgs": "--debug=true -t \"one\" \"two\""
     }
   }
 }

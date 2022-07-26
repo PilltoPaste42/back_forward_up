@@ -1,18 +1,22 @@
-﻿using System;
-
-namespace BackForwardUp
+﻿namespace BackForwardUp
 {
+    using System.IO;
+
     using CommandLine;
+
+    using Newtonsoft.Json;
 
     internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            var parameters = Parser.Default
-                .ParseArguments<CommandLineOptions>(args).Value;
+            var consoleOptions = Parser.Default
+                .ParseArguments<AppOptions>(args).Value;
 
-            Console.WriteLine(parameters.Alpha);
-            Console.WriteLine(parameters.Beta);
+            var json = File.ReadAllText(consoleOptions.ConfigPath);
+            var configOptions = JsonConvert.DeserializeObject<AppOptions>(json);
+
+            var appOptions = new AppOptions(consoleOptions, configOptions);
         }
     }
 }
