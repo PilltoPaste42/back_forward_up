@@ -4,11 +4,10 @@
 
     public class CommandLineOptions
     {
-        [Option('a', "alpha", Required = false, HelpText = "Alpha")]
-        public string Alpha { get; set; }
-
-        [Option('b', "beta", Required = false, HelpText = "Beta")]
-        public string Beta { get; set; }
-
+        [Option('c', "config",
+            Required = false,
+            Default = "./backup_config.json",
+            HelpText = "Путь к файлу конфигурации")]
+        public string ConfigPath { get; set; }
     }
 }

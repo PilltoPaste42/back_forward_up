@@ -1,8 +1,7 @@
 {
   "profiles": {
     "BackForwardUp": {
-      "commandName": "Project",
-      "commandLineArgs": "-a Hello -b World"
+      "commandName": "Project"
     }
   }
 }
