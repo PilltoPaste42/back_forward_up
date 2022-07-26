@@ -1,6 +1,5 @@
 ﻿namespace BackForwardUp
 {
-    using System;
     using System.IO;
 
     using CommandLine;
@@ -11,13 +10,13 @@
     {
         private static void Main(string[] args)
         {
-            var parameters = Parser.Default
-                .ParseArguments<CommandLineOptions>(args).Value;
+            var consoleOptions = Parser.Default
+                .ParseArguments<AppOptions>(args).Value;
 
-            var json = File.ReadAllText(parameters.ConfigPath);
-            var config = JsonConvert.DeserializeObject<BackupParameters>(json);
+            var json = File.ReadAllText(consoleOptions.ConfigPath);
+            var configOptions = JsonConvert.DeserializeObject<AppOptions>(json);
 
-            Console.WriteLine(config.Hello);
+            var appOptions = new AppOptions(consoleOptions, configOptions);
         }
     }
 }

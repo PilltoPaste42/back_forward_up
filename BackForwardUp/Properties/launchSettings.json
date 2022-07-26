@@ -1,7 +1,8 @@
 {
   "profiles": {
     "BackForwardUp": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "--debug=true -t \"one\" \"two\""
     }
   }
 }
